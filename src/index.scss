@@ -21,6 +21,44 @@ code {
 .icon {
   width: 15px;
   height: 15px;
+
+  &.trash {
+    color: crimson;
+  }
+}
+
+.sidebar-top {
+  height: 42px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    background: unset;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 8px 15px;
+    border: solid 1px #333;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+
+  select {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: inherit;
+  }
+}
+
+.sidebar-items__wrapper {
+  height: calc(100vh - 52px);
+  overflow-y: auto;
 }
 
 .sidebar-note {
@@ -77,10 +115,15 @@ code {
   flex: 1;
   overflow: hidden;
 
-  .top {
+  .main-top {
     display: flex;
     align-items: center;
     height: 42px;
+
+    @media (max-width: 440px) {
+      flex-direction: column;
+      height: auto;
+    }
 
     input {
       width: 100%;
@@ -103,6 +146,11 @@ code {
       background-color: whitesmoke;
       padding: 0 10px;
 
+      @media (max-width: 440px) {
+        background-color: inherit;
+        padding: 10px;
+      }
+
       select {
         border: unset;
         background: inherit;
@@ -117,9 +165,11 @@ code {
 
   textarea {
     width: 100%;
-    height: calc(100% - 42px);
+    height: calc(100% - 62px);
+    margin: 10px 10px 10px 0;
+    padding: 10px;
     resize: none;
-    border: unset;
+    border: solid 1px #333;
 
     &:focus {
       outline: none;
@@ -129,7 +179,12 @@ code {
 
 .preview {
   flex: 1;
+  padding: 10px;
   overflow: hidden;
   overflow-y: auto;
   background-color: whitesmoke;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
 }

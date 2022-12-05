@@ -1,3 +1,5 @@
+import ReactMarkdown from "react-markdown";
+
 import PrioritySelect from "./UI/PrioritySelect";
 
 const Main = ({ activeNote, handleUpdateNote }) => {
@@ -9,11 +11,11 @@ const Main = ({ activeNote, handleUpdateNote }) => {
     });
   };
   return (
-    <div className="col-md-8">
+    <section className="col-md-8">
       {activeNote ? (
         <div className="main-wrapper">
           <div className="form-wrapper">
-            <div className="top">
+            <header className="main-top">
               <input
                 type="text"
                 value={activeNote.title}
@@ -23,7 +25,7 @@ const Main = ({ activeNote, handleUpdateNote }) => {
                 activeNote={activeNote}
                 handleEditField={handleEditField}
               />
-            </div>
+            </header>
             <textarea
               name=""
               value={activeNote.body}
@@ -32,13 +34,13 @@ const Main = ({ activeNote, handleUpdateNote }) => {
           </div>
           <div className="preview">
             <h2>{activeNote.title}</h2>
-            <div>{activeNote.body}</div>
+            <ReactMarkdown>{activeNote.body}</ReactMarkdown>
           </div>
         </div>
       ) : (
         <h1>No notes selected</h1>
       )}
-    </div>
+    </section>
   );
 };
 

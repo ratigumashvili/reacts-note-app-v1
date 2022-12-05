@@ -18,8 +18,8 @@ export const getPriority = (value) => {
 };
 
 export const getIntroText = (value) => {
-  if (value.length >= 10) {
-    return value.substring(0, 100) + "...";
+  if (value && value.length >= 30) {
+    return value.substring(0, 30) + "...";
   }
-  return value.substring(0, 10);
+  return value.substring(0, 20);
 };

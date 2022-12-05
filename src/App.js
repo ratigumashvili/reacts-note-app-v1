@@ -12,7 +12,7 @@ function App() {
   const handleAddNote = () => {
     const newNote = {
       id: uuid(),
-      title: "Untitled",
+      title: "Untitled note",
       body: "",
       dateModified: Date.now(),
       priority: "normal",

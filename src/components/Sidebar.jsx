@@ -35,7 +35,10 @@ const Sidebar = ({
               <div className="sidebar-note__header">
                 <h3>{title}</h3>
                 <button
-                  onClick={() => handleRemoveNote(id)}
+                  onClick={(e) => {
+                    handleRemoveNote(id);
+                    e.stopPropagation();
+                  }}
                   title="Remove note"
                 >
                   <svg

@@ -8,6 +8,7 @@ const Sidebar = ({
   handleRemoveNote,
   activeNote,
   setActiveNote,
+  setMarker,
 }) => {
   const sortedArray = notes.sort((a, b) => b.dateModified - a.dateModified);
   return (
@@ -24,7 +25,9 @@ const Sidebar = ({
           <div
             key={id}
             className={`sidebar-note ${activeNote === id ? "active" : ""}`}
-            onClick={() => setActiveNote(id)}
+            onClick={() => {
+              setActiveNote(id);
+            }}
           >
             <div
               className="priority"

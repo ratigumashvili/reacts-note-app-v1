@@ -10,7 +10,7 @@ const PrioritySelect = ({ activeNote, handleEditField }) => {
       <label htmlFor="prioritySelect">Priority</label>
       <select
         id="prioritySelect"
-        defaultValue={activeNote.priority}
+        value={activeNote.priority}
         onChange={(e) => handleEditField("priority", e.target.value)}
       >
         {OPTIONS.map(({ value, name }) => (

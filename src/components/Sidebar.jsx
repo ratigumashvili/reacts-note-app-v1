@@ -1,4 +1,4 @@
-import { getDate, getPriority } from "../helpers/helpers";
+import { getDate, getPriority, getIntroText } from "../helpers/helpers";
 
 const Sidebar = ({
   notes,
@@ -29,7 +29,8 @@ const Sidebar = ({
               <button onClick={() => handleRemoveNote(id)}>x</button>
             </div>
             <div className="sidebar-note__body">
-              <p>{body}</p>
+              {/* <p>{body && body.substring(0, 10) + "..."}</p> */}
+              <p>{getIntroText(body)}</p>
               <div>{getDate(dateModified)}</div>
             </div>
           </div>

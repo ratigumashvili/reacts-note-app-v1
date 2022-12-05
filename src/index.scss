@@ -57,16 +57,42 @@ code {
   width: 100%;
   flex: 1;
   overflow: hidden;
-  background-color: red;
 
-  input {
-    width: 100%;
-    padding: 10px;
-    font-family: inherit;
-    font-size: inherit;
+  .top {
+    display: flex;
+    align-items: center;
+    height: 42px;
 
-    &:focus {
-      outline: none;
+    input {
+      width: 100%;
+      padding: 10px;
+      font-family: inherit;
+      font-size: inherit;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .select-wrapper {
+      width: 150px;
+      min-height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      background-color: whitesmoke;
+      padding: 0 10px;
+
+      select {
+        border: unset;
+        background: inherit;
+        font-size: inherit;
+        font-family: inherit;
+      }
+      label {
+        cursor: pointer;
+      }
     }
   }
 

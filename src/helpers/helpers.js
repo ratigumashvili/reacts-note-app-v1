@@ -16,3 +16,10 @@ export const getPriority = (value) => {
     return "crimson";
   }
 };
+
+export const getIntroText = (value) => {
+  if (value.length >= 10) {
+    return value.substring(0, 100) + "...";
+  }
+  return value.substring(0, 10);
+};

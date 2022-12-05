@@ -34,6 +34,22 @@ code {
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: 980px) {
+    // flex-direction: column;
+    height: auto;
+    padding-top: 10px;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: row;
+  }
+
+  @media (max-width: 340px) {
+    flex-direction: column;
+    height: auto;
+    padding-top: 10px;
+  }
+
   button {
     background: unset;
     font-family: inherit;
@@ -53,12 +69,28 @@ code {
     font-family: inherit;
     font-size: inherit;
     background-color: inherit;
+
+    @media (max-width: 980px) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 340px) {
+      margin-bottom: 10px;
+    }
   }
 }
 
 .sidebar-items__wrapper {
   height: calc(100vh - 52px);
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
 }
 
 .sidebar-note {

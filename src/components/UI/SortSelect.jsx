@@ -3,7 +3,7 @@ const OPTIONS = [
   { name: "Date modified", value: "dateModified" },
 ];
 
-const SortSelect = ({ notes }) => {
+const SortSelect = ({ notes, detectSortValue }) => {
   return (
     <div className="sort-wrapper">
       {notes.length !== 0 && (
@@ -12,9 +12,9 @@ const SortSelect = ({ notes }) => {
           <select
             id="sortSelect"
             defaultValue={OPTIONS[1].value}
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => detectSortValue(e.target.value)}
           >
-            {OPTIONS.map(({ name, value }) => (
+            {OPTIONS.map(({ name, value, order }) => (
               <option key={value} value={value}>
                 {name}
               </option>

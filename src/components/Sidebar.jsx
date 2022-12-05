@@ -1,7 +1,5 @@
 import ReactMarkdown from "react-markdown";
 
-import SortSelect from "./UI/SortSelect";
-
 import { getDate, getPriority, getIntroText } from "../helpers/helpers";
 
 const Sidebar = ({
@@ -11,17 +9,18 @@ const Sidebar = ({
   activeNote,
   setActiveNote,
 }) => {
+  const sortedArray = notes.sort((a, b) => b.dateModified - a.dateModified);
   return (
     <section className="col-md-4">
       <header className="sidebar-top">
-        <SortSelect notes={notes} />
+        <h1>Notes</h1>
         <button onClick={handleAddNote} title="Add note">
           Add note
         </button>
       </header>
 
       <div className="sidebar-items__wrapper">
-        {notes.map(({ id, title, body, dateModified, priority }) => (
+        {sortedArray.map(({ id, title, body, dateModified, priority }) => (
           <div
             key={id}
             className={`sidebar-note ${activeNote === id ? "active" : ""}`}

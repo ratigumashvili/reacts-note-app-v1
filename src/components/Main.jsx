@@ -27,7 +27,6 @@ const Main = ({ activeNote, handleUpdateNote }) => {
               />
             </header>
             <textarea
-              name=""
               value={activeNote.body}
               onChange={(e) => handleEditField("body", e.target.value)}
             ></textarea>

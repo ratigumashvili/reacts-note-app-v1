@@ -18,6 +18,11 @@ code {
     monospace;
 }
 
+.icon {
+  width: 15px;
+  height: 15px;
+}
+
 .sidebar-note {
   position: relative;
   margin-bottom: 5px;
@@ -45,6 +50,20 @@ code {
 .sidebar-note__header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+
+  h3 {
+    word-break: break-all;
+    white-space: wrap;
+  }
+
+  button {
+    padding: 10px;
+    border: unset;
+    background: unset;
+    font-size: inherit;
+    cursor: pointer;
+  }
 }
 
 .main-wrapper {

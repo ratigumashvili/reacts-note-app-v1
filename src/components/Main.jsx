@@ -5,7 +5,6 @@ const Main = ({ activeNote, handleUpdateNote }) => {
     handleUpdateNote({
       ...activeNote,
       [key]: value,
-      priority: value,
       dateModified: Date.now(),
     });
   };

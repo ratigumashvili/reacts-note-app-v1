@@ -8,7 +8,6 @@ const Sidebar = ({
   handleRemoveNote,
   activeNote,
   setActiveNote,
-  setNotes,
 }) => {
   const sortedArray = notes.sort((a, b) => b.dateModified - a.dateModified);
 

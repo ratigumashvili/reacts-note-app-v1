@@ -3,11 +3,20 @@ import Main from "./components/Main";
 
 import uuid from "react-uuid";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [notes, setNotes] = useState([]);
-  const [activeNote, setActiveNote] = useState(false);
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("notes")) || []
+  );
+  const [activeNote, setActiveNote] = useState(
+    JSON.parse(localStorage.getItem("active")) || false
+  );
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+    localStorage.setItem("active", JSON.stringify(activeNote));
+  }, [notes, activeNote]);
 
   const handleAddNote = () => {
     const newNote = {

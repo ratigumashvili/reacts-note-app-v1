@@ -8,9 +8,10 @@ const Sidebar = ({
   handleRemoveNote,
   activeNote,
   setActiveNote,
-  setMarker,
+  setNotes,
 }) => {
   const sortedArray = notes.sort((a, b) => b.dateModified - a.dateModified);
+
   return (
     <section className="col-md-4">
       <header className="sidebar-top">

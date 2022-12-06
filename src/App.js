@@ -47,6 +47,7 @@ function App() {
         <div className="row">
           <Sidebar
             notes={notes}
+            setNotes={setNotes}
             handleAddNote={handleAddNote}
             handleRemoveNote={handleRemoveNote}
             activeNote={activeNote}

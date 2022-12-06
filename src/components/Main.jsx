@@ -37,7 +37,7 @@ const Main = ({ activeNote, handleUpdateNote }) => {
           </div>
         </div>
       ) : (
-        <h1>No notes selected</h1>
+        <h1 className="empty-page">Nothing selected</h1>
       )}
     </section>
   );

@@ -117,11 +117,17 @@ code {
   }
 
   button {
-    padding: 10px;
+    padding: 10px 10px 5px 10px;
     border: unset;
     background: unset;
     font-size: inherit;
     cursor: pointer;
+  }
+}
+
+.sidebar-note__body {
+  p {
+    margin-bottom: 10px;
   }
 }
 
